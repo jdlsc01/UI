@@ -279,7 +279,7 @@ function Kavo.CreateLib(kavName, themeList)
     Main.AnchorPoint = Vector2.new(0.5, 0.5)
     Main.Position = UDim2.new(0.5, 0, 0.5, 0)    
     -- Main.Size = UDim2.new(0, 525, 0, 318)
-    Main.Size = UDim2.new(0, 525, 0, 245)
+    Main.Size = UDim2.new(0, 525, 0, 255)
     --[[
     Main.Position = UDim2.new(0.336503863, 0, 0.275485456, 0)
     Main.Size = UDim2.new(0, 525, 0, 318)
