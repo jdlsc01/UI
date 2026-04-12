@@ -266,7 +266,7 @@ function Kavo.CreateLib(kavName, themeList)
     Main.ClipsDescendants = true
     Main.AnchorPoint = Vector2.new(0.5, 0.5)
     Main.Position = UDim2.new(0.5, 0, 0.5, 0)
-    -- Main.Size = UDim2.new(0, 525, 0, 260) -- editei para Ficar menor
+    Main.Size = UDim2.new(0, 525, 0, 260)
     -- MainCorner.CornerRadius = UDim.new(0, 4)
     MainCorner.CornerRadius = UDim.new(0, 5)    
     MainCorner.Name = "MainCorner"
@@ -275,8 +275,7 @@ function Kavo.CreateLib(kavName, themeList)
     MainHeader.Parent = Main
     MainHeader.BackgroundColor3 = themeList.Header
     Objects[MainHeader] = "BackgroundColor3"
-    -- MainHeader.Size = UDim2.new(0, 525, 0, 27) -- aqui também editei, mas isso foi depois
-    MainSide.Size = UDim2.new(0, 149, 0, 233)
+    MainHeader.Size = UDim2.new(0, 525, 0, 27)
     headerCover.CornerRadius = UDim.new(0, 4)
     headerCover.Name = "headerCover"
     headerCover.Parent = MainHeader
@@ -326,7 +325,8 @@ function Kavo.CreateLib(kavName, themeList)
     MainSide.BackgroundColor3 = themeList.Header
     Objects[MainSide] = "Header"
     MainSide.Position = UDim2.new(-7.4505806E-9, 0, 0.0911949649, 0)
-    MainSide.Size = UDim2.new(0, 149, 0, 289)
+    -- MainSide.Size = UDim2.new(0, 149, 0, 289)
+    MainSide.Size = UDim2.new(0, 149, 0, 233)
     sideCorner.CornerRadius = UDim.new(0, 4)
     sideCorner.Name = "sideCorner"
     sideCorner.Parent = MainSide
