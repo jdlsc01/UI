@@ -6,6 +6,7 @@ local CoreGui = game:GetService("CoreGui")
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
+
 local TweenInfo = TweenInfo.new
 
 local Kavo = {}
@@ -508,19 +509,16 @@ function Kavo.CreateLib(kavName, themeList)
 			sectionlistoknvm.Parent = sectionFrame
 			sectionlistoknvm.SortOrder = Enum.SortOrder.LayoutOrder
 			sectionlistoknvm.Padding = UDim.new(0, 5)
-			for i, v in pairs(sectionInners:GetChildren()) do
-				while wait() do
-					if v:IsA("Frame") or v:IsA("TextButton") then
-						function size(pro)
-							if pro == "Size" then
-								UpdateSize()
-								updateSectionFrame()
-							end
-						end
-						v.Changed:Connect(size)
-					end
+			sectionInners.ChildAdded:Connect(function(child)
+				if child:IsA("Frame") or child:IsA("TextButton") then
+					child:GetPropertyChangedSignal("Size"):Connect(function()
+						updateSectionFrame()
+						UpdateSize()
+					end)
+					updateSectionFrame()
+					UpdateSize()
 				end
-			end
+			end)
 			sectionHead.Name = "sectionHead"
 			sectionHead.Parent = sectionFrame
 			sectionHead.BackgroundColor3 = themeList.SchemeColor
